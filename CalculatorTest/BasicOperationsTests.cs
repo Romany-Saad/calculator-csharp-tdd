@@ -1,5 +1,4 @@
 using System;
-using Calculator;
 using Xunit;
 using C = Calculator.Calculator;
 
@@ -86,14 +85,6 @@ namespace CalculatorTest
             Assert.Equal(145, C.Calculate("0 - 5 + 25 + 5 ^ 3"));
         }
 
-        [Fact]
-        public void ItShouldTolerateSpacing()
-        {
-            Assert.Equal(3, C.Calculate("       21/7"));
-            Assert.Equal(9, C.Calculate("21/7*    3"));
-            Assert.Equal(24, C.Calculate("21/7* 3+   5*3"));
-            Assert.Equal(24, C.Calculate("21/7*3+5*3"));
-        }
 
         [Fact]
         public void ItShouldBeAbleToCalculateRootForAValue()
@@ -109,10 +100,5 @@ namespace CalculatorTest
             Assert.Equal(130, C.Calculate("5 ^ 5 / 25 + 125 rt 3"));
         }
 
-        [Fact]
-        public void ItShouldDetectInvalidSyntax()
-        {
-            Assert.Throws<InvalidSyntaxException>(() => C.Calculate("25 + 100 rt") );
-        }
     }
 }
