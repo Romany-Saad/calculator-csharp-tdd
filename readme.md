@@ -50,3 +50,12 @@ Update #4
 
 Update #5
 * support for more unary operations like `sqrt`, `sin`, `cos`, `tan`  
+
+## Implementation notes
+
+### Update #2 
+this was easily done by implementing a list of delimiters (the signs for
+the operations) that we use to split the given string into 2 parts
+from right to left and recursively do that for the rest of the left part
+solving them first and working our way backwards to calculate the whole 
+equation.
